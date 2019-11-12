@@ -7,7 +7,6 @@ with open('Digital-solutions-Unit-3/roadcrash_factors.csv') as roadcrash_factors
         row = list(row.split(','))
         
         if line_count == 0:
-            print(f'Column names are {", ".join(row)}')
             line_count += 1
         else:
             year = row[1]
