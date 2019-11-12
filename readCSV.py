@@ -1,6 +1,6 @@
 import csv
 
-with open('Digital-solutions-Unit-3/roadcrash_factors.csv') as roadcrash_factors_file:
+with open('roadcrash_factors.csv') as roadcrash_factors_file:
     csv_reader = csv.reader(roadcrash_factors_file)
     line_count = 0
     for row in roadcrash_factors_file:

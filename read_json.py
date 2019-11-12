@@ -2,7 +2,7 @@ import json
 
 # importing data from a json file is called deserialization
 
-with open('Digital-solutions-Unit-3/roadcrash_factors.json', 'r') as roadcrash_factors_file:
+with open('roadcrash_factors.json', 'r') as roadcrash_factors_file:
     roadcrash_factors_data = json.load(roadcrash_factors_file)
 
 line_count = 0
