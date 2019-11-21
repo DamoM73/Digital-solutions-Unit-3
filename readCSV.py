@@ -1,7 +1,11 @@
 import csv
 
 with open('roadcrash_factors.csv') as roadcrash_factors_file:
+<<<<<<< HEAD
     csv_reader = csv.reader(roadcrash_factors_file)
+=======
+    csv_reader = csv.reader(roadcrash_factors_file, delimiter=',')
+>>>>>>> 584f9b90fa74cafd30ae8e9f49271f533ba7bd64
     line_count = 0
     for row in roadcrash_factors_file:
         row = list(row.split(','))
