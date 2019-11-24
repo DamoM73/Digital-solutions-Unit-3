@@ -23,19 +23,9 @@ def jprint(obj):
 
 # ---- MAIN PROGRAM ----
 # retrieve data from API
-trucks_response = requests.get("https://www.bnefoodtrucks.com.au/api/1/trucks")
+trucks_data = requests.get("https://www.bnefoodtrucks.com.au/api/1/trucks")
 
 # display formatted data
-jprint(trucks_response)
+jprint(trucks_data)
 
-# create database tables
-create_truck_tbl = """
-                    CREATE TABLE Trucks (
-	                    truck_id INTEGER PRIMARY KEY,
-	                    name TEXT NOT NULL,
-	                    category TEXT NOT NULL,
-	                    website TEXT
-                    );"""
-
-create_table("food_trucks.db","Trucks",create_truck_tbl)
 
