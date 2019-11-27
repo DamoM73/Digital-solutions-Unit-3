@@ -13,12 +13,32 @@ def jprint(obj):
 
 # ---- MAIN PROGRAM ----
 # retrieve data from API
+trucks_data = requests.get("https://www.bnefoodtrucks.com.au/api/1/trucks")
+sites_data = requests.get("https://www.bnefoodtrucks.com.au/api/1/sites")
 bookings_data = requests.get("https://www.bnefoodtrucks.com.au/api/1/bookings")
 
 # display formatted data
-jprint(bookings_data)
+#jprint(trucks_data)
 
+<<<<<<< HEAD
 #for row in bookings_data.json():
     #print(row["start"][:4])
     #print(row["start"][5:7])
     #print(row["start"][8:10])
+=======
+for row in trucks_data.json():
+    truck_id = row['truck_id']
+    name = row['name']
+    category = row['category']
+    website = row['category']
+    
+    print(truck_id, name, category, website)
+
+'''
+for row in bookings_data.json():
+    #print(row["start"][:4])
+    #print(row["start"][5:7])
+    #print(row["start"][8:10])
+'''
+
+>>>>>>> 080104d2f03fef78009bc12f50d55a8bbe90c695
