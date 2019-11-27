@@ -18,9 +18,7 @@ bookings_data = requests.get("https://www.bnefoodtrucks.com.au/api/1/bookings")
 # display formatted data
 jprint(bookings_data)
 
-for row in bookings_data.json():
+#for row in bookings_data.json():
     #print(row["start"][:4])
     #print(row["start"][5:7])
     #print(row["start"][8:10])
-
-
