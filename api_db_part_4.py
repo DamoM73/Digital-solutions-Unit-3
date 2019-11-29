@@ -31,14 +31,14 @@ def table_insert(db_file, table_name, values):
         # execute an insert statement for each row of provided data list
         records = 0
         for row in values:
-            #print(row)
+            print(row)
             cursor.execute(f"""
                             INSERT INTO {table_name}
                             VALUES ({row});
                             """)
             records += 1
         print(f"Added {records} records to the {table_name} table")
-
+'''
 def sql_query(db_file, query):
     # connect with database file
     with sqlite3.connect(db_file) as database:
@@ -47,7 +47,7 @@ def sql_query(db_file, query):
         # execute provided query
         cursor.execute(query)
         return cursor.fetchall()
-
+'''
 
 # ---- MAIN PROGRAM ----
 # retrieve data from API
@@ -56,7 +56,7 @@ sites_data = requests.get("https://www.bnefoodtrucks.com.au/api/1/sites")
 bookings_data = requests.get("https://www.bnefoodtrucks.com.au/api/1/bookings")
 
 # display formatted data
-#jprint(sites_data)
+#jprint(trucks_data)
 
 # -- create database tables --
 # truck table
@@ -97,6 +97,7 @@ create_table(DB_FILE,"Bookings",create_bookings_tble)
 # create a list with an element for each row of the json file
 
 # truck table
+
 values = []
 for row in trucks_data.json():
     truck_id = row['truck_id']
@@ -106,6 +107,7 @@ for row in trucks_data.json():
         website = 'none'
     else:
         website = row['website']
+    
     values.append(f'{truck_id}, "{name}", "{category}", "{website}"')
-table_insert(DB_FILE,"Trucks", values)
 
+table_insert(DB_FILE,"Trucks", values)
